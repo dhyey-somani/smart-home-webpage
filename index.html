@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome Tech - Future Living Today</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section with Navigation Bar -->
+    <header id="main-header">
+        <div class="header-container">
+            <h1 class="logo">Smart<span>Home</span> Tech</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#simulator">Live Demo</a></li>
+                    <li><a href="#order-form">Inquiry Form</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="cart-box">
+                Cart Items: <span id="cart-counter">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Banner Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h2>Transform Your Living Space With Intelligent Devices</h2>
+            <p>Control your lights, security, and climate with simple taps and voice commands.</p>
+            <br>
+            <a href="#products" class="btn btn-primary">Explore Products</a>
+            <a href="#simulator" class="btn btn-secondary">Try Live Simulator</a>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="section-container">
+        <h2 class="section-title">Popular Smart Home Devices</h2>
+        <p class="section-subtitle">Upgrade your comfort, safety, and energy efficiency</p>
+
+        <div class="product-grid">
+            
+            <!-- Product Card 1 -->
+            <article class="product-card">
+                <span class="badge">Trending</span>
+                <img src="https://images.unsplash.com/photo-1543512214-318c7553f230?w=500&auto=format&fit=crop&q=60" alt="Smart Voice Speaker" class="product-img">
+                <div class="product-details">
+                    <h3>Smart Audio Hub & Voice Assistant</h3>
+                    <p class="product-desc">Control home appliances with 360-degree sound and built-in AI voice assist.</p>
+                    <p><mark>Energy Efficient</mark> | Bluetooth 5.2</p>
+                    <p class="price">&#8377; 3,499</p>
+                    <button type="button" class="btn btn-primary" onclick="addToCart('Smart Audio Hub', 3499)">Add to Cart</button>
+                </div>
+            </article>
+
+            <!-- Product Card 2 -->
+            <article class="product-card">
+                <span class="badge">Security</span>
+                <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&auto=format&fit=crop&q=60" alt="Smart Security Camera" class="product-img">
+                <div class="product-details">
+                    <h3>360&deg; HD Wi-Fi Security Camera</h3>
+                    <p class="product-desc">Night vision, motion alerts, and two-way audio streaming directly to your phone.</p>
+                    <p><mark>Best Seller</mark> | 1080p Full HD</p>
+                    <p class="price">&#8377; 2,899</p>
+                    <button type="button" class="btn btn-primary" onclick="addToCart('Security Camera', 2899)">Add to Cart</button>
+                </div>
+            </article>
+
+            <!-- Product Card 3 -->
+            <article class="product-card">
+                <span class="badge">Lighting</span>
+                <img src="https://images.unsplash.com/photo-1507499739999-097706ad8914?w=500&auto=format&fit=crop&q=60" alt="Smart Color Bulb" class="product-img">
+                <div class="product-details">
+                    <h3>RGB Smart Wi-Fi LED Bulb</h3>
+                    <p class="product-desc">16 million colors, schedule automated timers, and sync lights to music.</p>
+                    <p><mark>10W Saver</mark> | 16M Colors</p>
+                    <p class="price">&#8377; 699</p>
+                    <button type="button" class="btn btn-primary" onclick="addToCart('RGB Smart LED Bulb', 699)">Add to Cart</button>
+                </div>
+            </article>
+
+            <!-- Product Card 4 -->
+            <article class="product-card">
+                <span class="badge">Safety</span>
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500&auto=format&fit=crop&q=60" alt="Smart Door Lock" class="product-img">
+                <div class="product-details">
+                    <h3>Fingerprint Smart Door Lock</h3>
+                    <p class="product-desc">Unlock via fingerprint, PIN code, RFID card, or companion mobile app.</p>
+                    <p><mark>Heavy Duty</mark> | Auto-lock</p>
+                    <p class="price">&#8377; 8,999</p>
+                    <button type="button" class="btn btn-primary" onclick="addToCart('Smart Door Lock', 8999)">Add to Cart</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Interactive Smart Home Simulator Section -->
+    <section id="simulator" class="section-container">
+        <h2 class="section-title">Interactive Device Control Center</h2>
+        <p class="section-subtitle">Click the buttons below to test basic JavaScript state changes</p>
+
+        <div class="simulator-box">
+            <!-- Smart Light Box -->
+            <div class="device-card">
+                <h3>Living Room Light</h3>
+                <div id="light-indicator" class="status-indicator light-off">Light is OFF</div>
+                <button type="button" class="btn btn-secondary" onclick="toggleLight()">Toggle Light</button>
+            </div>
+
+            <!-- Smart Door Lock Box -->
+            <div class="device-card">
+                <h3>Front Main Door</h3>
+                <div id="lock-indicator" class="status-indicator door-locked">Door is LOCKED</div>
+                <button type="button" class="btn btn-secondary" onclick="toggleDoor()">Toggle Lock</button>
+            </div>
+
+            <!-- Smart Air Conditioner -->
+            <div class="device-card">
+                <h3>Air Conditioner Mode</h3>
+                <div id="ac-indicator" class="status-indicator ac-normal">Current: 24&deg;C (Normal)</div>
+                <button type="button" class="btn btn-secondary" onclick="toggleAcMode()">Toggle Eco Mode</button>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Product Inquiry & Booking Form (Unit 2 Requirements) -->
+    <section id="order-form" class="section-container">
+        <h2 class="section-title">Product Inquiry & Order Form</h2>
+        <p class="section-subtitle">Please fill out this form to request a product demo or place an order</p>
+
+        <form id="contactForm" onsubmit="return validateForm(event)">
+            <!-- Fieldset 1: Customer Personal Details -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <div class="form-group">
+                    <label for="userName">Full Name:</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userEmail">Email Address:</label>
+                    <input type="email" id="userEmail" name="userEmail" placeholder="example@mail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userPhone">Phone Number:</label>
+                    <input type="text" id="userPhone" name="userPhone" placeholder="10-digit mobile number">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Fieldset 2: Order & Preference Details -->
+            <fieldset>
+                <legend>Product & Delivery Preferences</legend>
+
+                <!-- Select Dropdown Tag -->
+                <div class="form-group">
+                    <label for="productSelect">Select Product:</label>
+                    <select id="productSelect" name="productSelect">
+                        <option value="">-- Choose a Product --</option>
+                        <option value="Smart Audio Hub">Smart Audio Hub (&#8377; 3,499)</option>
+                        <option value="Security Camera">360 HD Security Camera (&#8377; 2,899)</option>
+                        <option value="RGB Smart Bulb">RGB Smart LED Bulb (&#8377; 699)</option>
+                        <option value="Smart Door Lock">Smart Door Lock (&#8377; 8,999)</option>
+                    </select>
+                </div>
+
+                <!-- Radio Buttons for Delivery Speed -->
+                <div class="form-group">
+                    <label>Delivery Method:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="deliveryStandard" name="deliverySpeed" value="Standard" checked>
+                        <label for="deliveryStandard">Standard Delivery (3-5 Days)</label>
+                        
+                        <input type="radio" id="deliveryExpress" name="deliverySpeed" value="Express">
+                        <label for="deliveryExpress">Express Delivery (Next Day)</label>
+                    </div>
+                </div>
+
+                <!-- Checkboxes for Extra Services -->
+                <div class="form-group">
+                    <label>Additional Services:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="installation" name="services" value="Installation">
+                        <label for="installation">Request Home Technician Installation</label>
+                        <br>
+                        <input type="checkbox" id="extendedWarranty" name="services" value="Warranty">
+                        <label for="extendedWarranty">Add 1-Year Extended Warranty</label>
+                    </div>
+                </div>
+
+                <!-- Textarea for Additional Notes -->
+                <div class="form-group">
+                    <label for="message">Special Instructions / Address:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter delivery address or question..."></textarea>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <!-- Form Action Buttons -->
+            <div class="form-actions">
+                <input type="submit" value="Submit Inquiry" class="btn btn-primary">
+                <input type="reset" value="Clear Form" class="btn btn-secondary">
+            </div>
+        </form>
+
+        <!-- Message Box after submission -->
+        <div id="formFeedback" class="feedback-message"></div>
+    </section>
+
+    <hr>
+
+    <!-- About & Educational Summary Section -->
+    <section id="about" class="section-container">
+        <h2 class="section-title">About SmartHome Solutions</h2>
+        <div class="about-grid">
+            <div>
+                <h3>Why Smart Homes?</h3>
+                <p>Smart home automation connects your domestic appliances to the internet so you can monitor and control them remotely. It saves energy, enhances home safety, and makes day-to-day life convenient.</p>
+                
+                <!-- Unordered List -->
+                <h4>Key Advantages:</h4>
+                <ul>
+                    <li>Remote smartphone access anywhere, anytime</li>
+                    <li>Reduced monthly electricity bills</li>
+                    <li>Instant intrusion and emergency notifications</li>
+                </ul>
+            </div>
+
+            <div>
+                <!-- Ordered List -->
+                <h4>3 Easy Setup Steps:</h4>
+                <ol>
+                    <li>Plug in your smart device</li>
+                    <li>Connect it to your 2.4GHz Home Wi-Fi</li>
+                    <li>Control using mobile application or voice</li>
+                </ol>
+
+                <!-- Definition List (from Unit 1 syllabus) -->
+                <h4>Quick Definitions:</h4>
+                <dl>
+                    <dt><strong>IoT (Internet of Things):</strong></dt>
+                    <dd>A network of physical devices connected to the web exchanging data.</dd>
+                    <dt><strong>Automation:</strong></dt>
+                    <dd>Setting rules for devices to run tasks without human intervention.</dd>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (Unit 2 Requirements) -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 SmartHome Tech. Designed for BSc(IT) Sem-1 Web Technologies Assignment.</p>
+            <p>Made with HTML5, CSS3, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+</html>

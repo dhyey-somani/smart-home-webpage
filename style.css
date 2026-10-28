@@ -1,0 +1,465 @@
+/* ========================================================
+   CSS Stylesheet for SmartHome Tech Website
+   Subject: Web Technologies (BSc IT - Semester 1)
+   Concepts Used:
+   - Selectors: Element, Class (.class), ID (#id)
+   - Box Model: margin, padding, border
+   - Display: block, inline-block, flex
+   - Positioning: sticky, relative, absolute, z-index
+   - Pseudo-classes: :hover, :focus
+   - Units: px, %, rem
+   ======================================================== */
+
+/* 1. Global Reset & Base Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9; /* Light slate background */
+    color: #334155;            /* Dark readable text */
+    line-height: 1.6;
+}
+
+/* 2. Header and Navigation (Demonstrating Sticky Position & z-index) */
+#main-header {
+    background-color: #0f172a; /* Deep navy */
+    color: #ffffff;
+    position: sticky;          /* Keeps header fixed at the top while scrolling */
+    top: 0;
+    z-index: 100;              /* Ensures header stays above other elements */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;             /* Modern alignment */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #38bdf8;            /* Sky blue highlight */
+}
+
+/* Navigation Links (Demonstrating Inline & Hover) */
+.nav-links {
+    list-style-type: none;     /* Removes default bullets */
+}
+
+.nav-links li {
+    display: inline-block;     /* Places list items side-by-side */
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;     /* Removes link underline */
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* Pseudo-class: :hover */
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: #1e293b;
+}
+
+/* Cart Counter Display */
+.cart-box {
+    background-color: #1e293b;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid #38bdf8;
+}
+
+#cart-counter {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* 3. Hero / Banner Section */
+.hero-section {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.85)), 
+                url('https://images.unsplash.com/photo-1558002038-1055907df827?w=1200&auto=format&fit=crop&q=60');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* 4. Common Reusable Button Classes */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0284c7; /* Primary blue button */
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0369a1; /* Darker blue on hover */
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #f8fafc;
+}
+
+/* 5. General Section Containers */
+.section-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* 6. Product Cards Grid (Demonstrating Relative & Absolute Positioning) */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    width: 23%;              /* Responsive 4 column layout */
+    min-width: 240px;
+    position: relative;       /* Required for absolute badge positioning */
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect on card */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge (Demonstrating absolute positioning) */
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #0284c7;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.product-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-details {
+    padding: 16px;
+}
+
+.product-details h3 {
+    font-size: 17px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 12px;
+    height: 40px;
+}
+
+/* Special tag styling for <mark> */
+mark {
+    background-color: #fef08a;
+    color: #854d0e;
+    padding: 2px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    color: #0284c7;
+    margin: 12px 0;
+}
+
+/* 7. Interactive Live Demo / Simulator Section */
+.simulator-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.device-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 25px;
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+}
+
+.status-indicator {
+    padding: 12px;
+    margin: 18px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+/* Device status state classes (Toggled via JS) */
+.light-off {
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: 1px dashed #cbd5e1;
+}
+
+.light-on {
+    background-color: #fef9c3;
+    color: #a16207;
+    border: 1px solid #facc15;
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.4);
+}
+
+.door-locked {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+}
+
+.door-unlocked {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #4ade80;
+}
+
+.ac-normal {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #7dd3fc;
+}
+
+.ac-eco {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #34d399;
+}
+
+/* 8. HTML Forms & Fieldset Styles (Unit 2 Requirements) */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+fieldset {
+    border: 1px solid #cbd5e1;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+legend {
+    font-weight: bold;
+    color: #0f172a;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;            /* Stack label above input */
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #334155;
+}
+
+/* Form input elements styling */
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Pseudo-class: :focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #0284c7;
+    background-color: #ffffff;
+}
+
+/* Radio & Checkbox label adjustments */
+.radio-group label,
+.checkbox-group label {
+    display: inline;
+    font-weight: normal;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Form submission feedback message */
+.feedback-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    display: none;             /* Initially hidden, shown by JavaScript */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 9. About Section & Lists */
+.about-grid {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    gap: 40px;
+}
+
+.about-grid > div {
+    flex: 1;
+}
+
+.about-grid h3, .about-grid h4 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.about-grid ul, .about-grid ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.about-grid dl {
+    background-color: #f8fafc;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #0284c7;
+}
+
+.about-grid dt {
+    color: #0f172a;
+    margin-top: 6px;
+}
+
+.about-grid dd {
+    margin-left: 15px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* 10. Footer Section */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.footer-container p {
+    margin: 5px 0;
+}
